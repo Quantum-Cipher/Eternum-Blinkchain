@@ -1,8 +1,8 @@
 {
   "pulse": 732,
-  "timestamp": "2025-10-03T21:35:38.477Z",
-  "manifest_cid": "pending",
-  "sigil_hex": "pending",
-  "entropy_hash": "pending",
+  "timestamp": "2025-10-03T21:45:18.674Z",
+  "manifest_cid": "QmevveEMFR4mAuDXUr6qids3uvgdacDKHhZ38uAQ9pJTNg",
+  "sigil_hex": "3f9cbefcdaadba73",
+  "entropy_hash": "3f9cbefcdaadba731d1018d613679921577760f10cdbaf262b58ea8a5772b410",
   "raw_tx": "pending"
 }
