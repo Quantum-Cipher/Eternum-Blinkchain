@@ -1,0 +1,30 @@
+name: Pulse Trigger Activation
+
+on:
+  schedule:
+    - cron: '15 1 * * *'  # Daily at 01:15 UTC
+  workflow_dispatch:
+
+jobs:
+  pulse-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Pulse Trigger
+        run: npm run trigger:pulse
+        working-directory: frontend
+
+      - name: Commit Trigger Event
+        run: |
+          git config user.name "PulseBot"
+          git config user.email "pulse@blinkchain.io"
+          git add frontend/blinkchain/ipfs_index/trigger_event.json
+          git commit -m "Pulse Trigger activated from latest blink"
+          git push

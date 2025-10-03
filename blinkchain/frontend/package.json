@@ -1,1 +1,2 @@
 "generate:drake": "node blinkchain/scripts/drake_blink.js"
+"trigger:pulse": "node blinkchain/scripts/pulse_trigger.js"
