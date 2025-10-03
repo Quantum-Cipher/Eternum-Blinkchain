@@ -1,0 +1,8 @@
+{
+  "pulse": 42,
+  "manifest_cid": "bafybeihdwdcefgh4dqkjv67uzcmw7ojee6xedzdetojuzjevtenxquvyku",
+  "sigil_hex": "0xabcdef1234567890abcdef1234567890abcdef12",
+  "entropy_hash": "0x7b4f3a2e1d5c9b8a7f6e5d4c3b2a1908f7e6d5c4b3a2",
+  "timestamp": "2025-10-03T12:00:00Z",
+  "raw_tx": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+}
