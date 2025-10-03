@@ -12,18 +12,19 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: '20'
 
       - name: Run Blink Equation
-        run: python scripts/blink_equation.py
+        run: npm run generate:pulse
+        working-directory: frontend
 
       - name: Commit new manifest
         run: |
           git config user.name "Blinkchain Bot"
           git config user.email "bot@blinkchain.io"
-          git add ipfs_index/*.json
+          git add frontend/blinkchain/ipfs_index/*.json
           git commit -m "Auto-generated pulse manifest"
           git push
