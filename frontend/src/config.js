@@ -1,2 +1,0 @@
-echo 'export const NEXUS_ADDRESS = "0x0000000000000000000000000000000000000000"; // Update post-deployment
-export const YUKAN_ADDRESS = "0x0000000000000000000000000000000000000000";' > frontend/src/config.js
