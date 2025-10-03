@@ -17,6 +17,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install IPFS CLI
+        run: |
+          curl -O https://dist.ipfs.tech/go-ipfs/v0.18.1/go-ipfs_v0.18.1_linux-amd64.tar.gz
+          tar -xvzf go-ipfs_v0.18.1_linux-amd64.tar.gz
+          bash go-ipfs/install.sh
+
       - name: Run Blink Equation
         run: npm run generate:pulse
         working-directory: frontend
