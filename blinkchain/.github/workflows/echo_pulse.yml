@@ -1,0 +1,30 @@
+name: Echo Pulse Entropy Generator
+
+on:
+  schedule:
+    - cron: '30 0 * * *'  # Daily at 00:30 UTC
+  workflow_dispatch:
+
+jobs:
+  echo-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Echo Pulse
+        run: npm run generate:echo
+        working-directory: frontend
+
+      - name: Commit echo pulse
+        run: |
+          git config user.name "EchoBot"
+          git config user.email "echo@blinkchain.io"
+          git add frontend/blinkchain/ipfs_index/echo_pulse.json
+          git commit -m "Echo pulse emitted from blink entropy"
+          git push

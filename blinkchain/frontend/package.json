@@ -6,3 +6,5 @@
   },
   "dependencies": {}
 }
+
+"generate:echo": "node blinkchain/scripts/echo_pulse.js"
