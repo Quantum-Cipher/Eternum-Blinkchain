@@ -32,5 +32,5 @@ jobs:
           git config user.name "Blinkchain Bot"
           git config user.email "bot@blinkchain.io"
           git add frontend/blinkchain/ipfs_index/*.json
-          git commit -m "Auto-generated pulse manifest"
+          git commit -m "Auto-generated pulse manifest with entropy and sigil"
           git push
