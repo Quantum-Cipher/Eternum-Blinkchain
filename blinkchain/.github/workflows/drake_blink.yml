@@ -1,0 +1,30 @@
+name: Drake Equation Blink
+
+on:
+  schedule:
+    - cron: '45 0 * * *'  # Daily at 00:45 UTC
+  workflow_dispatch:
+
+jobs:
+  drake-blink:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Drake Blink
+        run: npm run generate:drake
+        working-directory: frontend
+
+      - name: Commit Drake Blink
+        run: |
+          git config user.name "DrakeBot"
+          git config user.email "drake@eternum.io"
+          git add frontend/blinkchain/ipfs_index/drake_blink_*.json
+          git commit -m "Drake Equation Blink emitted"
+          git push

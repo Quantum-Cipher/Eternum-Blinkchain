@@ -1,10 +1,1 @@
-{
-  "name": "blinkchain-frontend",
-  "version": "1.0.0",
-  "scripts": {
-    "generate:pulse": "node blinkchain/scripts/blink_equation.js"
-  },
-  "dependencies": {}
-}
-
-"generate:echo": "node blinkchain/scripts/echo_pulse.js"
+"generate:drake": "node blinkchain/scripts/drake_blink.js"
