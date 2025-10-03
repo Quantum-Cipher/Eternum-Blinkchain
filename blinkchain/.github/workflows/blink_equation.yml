@@ -1,0 +1,29 @@
+name: Blink Equation Pulse Generator
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  generate-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run Blink Equation
+        run: python scripts/blink_equation.py
+
+      - name: Commit new manifest
+        run: |
+          git config user.name "Blinkchain Bot"
+          git config user.email "bot@blinkchain.io"
+          git add ipfs_index/*.json
+          git commit -m "Auto-generated pulse manifest"
+          git push
