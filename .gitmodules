@@ -1,0 +1,6 @@
+[submodule "eternum/lib/forge-std"]
+	path = eternum/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "eternum/eternum/lib/forge-std"]
+	path = eternum/eternum/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
