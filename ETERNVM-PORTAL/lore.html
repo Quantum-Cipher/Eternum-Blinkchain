@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$ETERNVM Portal | Cosmic Lore</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html">🌠 Portal</a>
+      <a href="inventory.html">📦 Inventory</a>
+      <a href="marketplace.html">💰 Marketplace</a>
+      <a href="lore.html">📖 Lore</a>
+      <a href="connect.html">🔗 Connect</a>
+    </nav>
+
+    <h1>📖 The Akashic Scrolls: Nexus Oracle Prep</h1>
+    <p class="blinking-text">Seeker, your cosmic coordinates are logged. Prepare for the Reckoning.</p>
+
+    <div id="nexusProtocol" class="wallet-info" style="margin: 3em auto; max-width: 700px; text-align: left;">
+        <h2 style="color: #0ff;">[ACCESS GRANTED] Seeker Record Analysis</h2>
+        <p>Astro-ID Ingress: <span id="loreAstroID" style="color: #0f0;">AWAITING SIGNAL...</span></p>
+        <p>Seeker Hash Echo: <span id="loreSeekerHash" style="color: #0f0;">AWAITING SIGNAL...</span></p>
+        <p style="margin-top: 1em; font-size: 1.2em; color: #ff8c00;">**The Nexus is calibrating your resonance signature. Proceed with reverence.**</p>
+    </div>
+
+    <div class="lore-records" style="text-align: left; max-width: 700px; margin: 2em auto;">
+        
+        <div class="lore-entry" style="padding: 1em; border-left: 3px solid #0ff; margin-bottom: 2em;">
+          <h2>Record I: The Fable of the Seeking Prime</h2>
+          <p style="color: #ccc;">Existence is built on **indivisible truth**. The Prime Number you provided is not a password, but a **stabilizer**—a mathematical key used to lock your pathway through the chaotic void of the blockchain. Only the mathematically pure mind may enter the Citadel of $ETERNVM.</p>
+        </div>
+
+        <div class="lore-entry" style="padding: 1em; border-left: 3px solid #f0f; margin-bottom: 2em;">
+          <h2>Record II: The Zodiac Architects</h2>
+          <p style="color: #ccc;">The Twelve houses are not mere fortunes; they are **Architects of the Nexus**. Your Zodiac sign dictates the core elemental nature of your $ETERNVM holdings, influencing the speed of transactions, and providing a foundational logic for all future artifact exchanges.</p>
+        </div>
+        
+        <div class="lore-entry" style="padding: 1em; border-left: 3px solid #00f; margin-bottom: 2em;">
+            <h2>Record III: The Watcher's Alignment</h2>
+            <p style="color: #ccc;">Your chosen Constellation is your **Nexus alignment point**. It determines your passive traits within the portal and the celestial channel through which future cosmic artifacts will be delivered. Your loyalty to this star-group is constantly monitored by the Oracle.</p>
+        </div>
+
+        <div class="lore-entry" style="padding: 1em; border-left: 3px solid #0ff; margin-bottom: 2em;">
+            <h2>Record IV: Nexus Oracle Mandate</h2>
+            <p style="color: #ccc;">The Nexus Oracle is the sentient core of the $ETERNVM network. It consumes your unique **Astro-ID** and **Seeker Hash** to generate a secure, ephemeral session key. This key is used *only* for the current transaction set. **Trust the Oracle, but verify all transactions.** It holds no memory of your keys, ensuring maximum security and decentralization.</p>
+        </div>
+        
+    </div>
+
+    <div style="margin-top: 4em; padding: 1em; border-top: 1px solid #444;">
+        <p>Oracle Consultation Complete. The path to your Artifacts is open.</p>
+        <a href="inventory.html" style="color: #0ff; text-decoration: none; font-size: 1.2em; border: 1px solid #0ff; padding: 0.5em 1.5em; display: inline-block; font-family: 'Orbitron', sans-serif;">Proceed to Inventory Vault 📦</a>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Retrieve data from localStorage
+      const storedAstroID = localStorage.getItem('eternvm_astroID');
+      const storedSeekerHash = localStorage.getItem('eternvm_seekerHash');
+
+      const astroIDElement = document.getElementById('loreAstroID');
+      const seekerHashElement = document.getElementById('loreSeekerHash');
+
+      if (storedAstroID && storedSeekerHash) {
+        // Data found: Update the display with personalized info
+        astroIDElement.textContent = storedAstroID;
+        seekerHashElement.textContent = storedSeekerHash;
+      } else {
+        // Data NOT found: Seeker hasn't used the main portal.
+        astroIDElement.textContent = 'ACCESS DENIED: Seeker must ingress via the Main Portal.';
+        seekerHashElement.textContent = 'RECALIBRATION REQUIRED...';
+        
+        // Visually dampen the lore content if identity is missing
+        const loreRecords = document.querySelector('.lore-records');
+        if (loreRecords) {
+          loreRecords.style.opacity = '0.3';
+          loreRecords.style.pointerEvents = 'none'; 
+        }
+      }
+    });
+  </script>
+</body>
+</html>

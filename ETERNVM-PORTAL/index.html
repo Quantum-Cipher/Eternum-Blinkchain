@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hark, Seeker | $ETERNVM Portal</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <div class="content-wrapper">
+    <nav>
+      <a href="index.html">🌠 Portal</a>
+      <a href="inventory.html">📦 Inventory</a>
+      <a href="marketplace.html">💰 Marketplace</a>
+      <a href="lore.html">📖 Lore</a>
+      <a href="connect.html">🔗 Connect</a>
+    </nav>
+    
+    <h1>🌠 Hark, Seeker</h1>
+    <p class="blinking-text">Enter your cosmic coordinates to unlock your $ETERNVM wallet.</p>
+
+    <form id="seekerForm">
+      <label>Favorite Constellation:</label><br>
+      <input type="text" name="constellation" required><br>
+
+      <label>Prime Number:</label><br>
+      <input type="number" name="prime" required><br>
+
+      <label>Zodiac Sign:</label><br>
+      <select name="zodiac" required>
+        <option value="">Select</option>
+        <option>Aries</option><option>Taurus</option><option>Gemini</option>
+        <option>Cancer</option><option>Leo</option><option>Virgo</option>
+        <option>Libra</option><option>Scorpio</option><option>Sagittarius</option>
+        <option>Capricorn</option><option>Aquarius</option><option>Pisces</option>
+      </select><br>
+
+      <button type="submit">Generate Wallet</button>
+    </form>
+
+    <div class="wallet-info" id="walletInfo" style="display:none;">
+      <h2>🔐 Your Identity Credentials</h2>
+      <p><strong>Credentials:</strong> <span id="walletAddress"></span></p>
+      <p><strong>Security Status:</strong> <span id="privateKey"></span></p>
+    </div>
+  </div>
+
+  <script>
+    function isPrime(num) {
+      if (num < 2) return false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+
+    document.getElementById('seekerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const primeInput = document.querySelector('input[name="prime"]');
+      const prime = parseInt(primeInput.value);
+
+      if (!isPrime(prime)) {
+        alert("🚫 That number isn't a true Prime, Seeker. Recalculate your cosmic sequence.");
+        primeInput.focus();
+        return;
+      }
+
+      // Generation of safe, thematic IDs
+      const astroID = 'ASTRO-' + Math.floor(Math.random() * 1000000);
+      const seekerHash = '0x' + btoa(Date.now().toString()).slice(0, 16).toUpperCase(); 
+
+      // CRITICAL: Save data to localStorage for transfer to Lore page
+      localStorage.setItem('eternvm_astroID', astroID);
+      localStorage.setItem('eternvm_seekerHash', seekerHash);
+      
+      // Display Safe Information
+      document.getElementById('walletAddress').innerHTML = `🪐 Astro-ID: **${astroID}**<br>📡 Seeker Hash: **${seekerHash}**`;
+      document.getElementById('privateKey').innerHTML = `⚠️ **SECURITY PROTOCOL ENGAGED:** Wallet keys are **never** generated in-browser. Connect using a trusted, non-custodial gateway (e.g., MetaMask).`;
+      document.getElementById('walletInfo').style.display = 'block';
+
+      document.querySelector('button').disabled = true;
+    });
+  </script>
+</body>
+</html>
