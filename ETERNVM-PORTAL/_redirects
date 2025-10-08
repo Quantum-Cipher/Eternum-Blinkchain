@@ -1,4 +1,7 @@
-# Map subdomains to their correct HTML files
+# 1. Redirect root domain to the official application subdomain
+https://eternum369.com/ https://app.eternum369.com/ 301!
+
+# 2. Map all subdomains to their unique files
 https://app.eternum369.com/* /index.html 200
 https://lore.eternum369.com/* /lore.html 200
 https://inventory.eternum369.com/* /inventory.html 200
