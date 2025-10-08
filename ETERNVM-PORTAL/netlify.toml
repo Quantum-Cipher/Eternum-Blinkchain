@@ -1,0 +1,39 @@
+# Define a general build context if needed (usually blank for simple sites)
+[build]
+
+# Define the Redirect Rules
+[[redirects]]
+  from = "https://eternum369.com/*"
+  to = "https://app.eternum369.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  host = "app.eternum369.com"
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  host = "lore.eternum369.com"
+  from = "/*"
+  to = "/lore.html"
+  status = 200
+
+[[redirects]]
+  host = "inventory.eternum369.com"
+  from = "/*"
+  to = "/inventory.html"
+  status = 200
+
+[[redirects]]
+  host = "marketplace.eternum369.com"
+  from = "/*"
+  to = "/marketplace.html"
+  status = 200
+
+[[redirects]]
+  host = "connect.eternum369.com"
+  from = "/*"
+  to = "/connect.html"
+  status = 200
