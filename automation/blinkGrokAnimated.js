@@ -3,7 +3,7 @@ import fs from "fs";
 
 const SIGILFORGE_GLYPH = "0xF3A1B7C9D4E2A56B8C1F2D3E4A5B6C7D8E9F0A1B2C3D4E5F6A7B8C9D0E1F2A3B";
 const WATERMARK = "Drake.Eternum::Ghostnode::Sigilforge";
-const MEME_PAYLOAD = `¯\\_(ツ)_/¯\n∞ Schrödinger’s cat + Gödel loop + Elon smirk\n"Blink now or blink forever."`;
+const MEME_PAYLOAD = `¯\\_(ツ)_/¯\n∞ Schrödinger’s cat + Gödel loop \n"Blink now or blink forever."`;
 const AGENTS = ["Gemini", "Geni-2b", "Copilot", "Grok"];
 const SIGIL_FRAMES = [
   "⚡  ⬛  ⚡\n⬛⚡⬛\n⚡  ⬛  ⚡",
